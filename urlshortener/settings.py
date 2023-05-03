@@ -67,8 +67,14 @@ WSGI_APPLICATION = 'urlshortener.wsgi.application'
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.sqlite3',
-         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         # 'ENGINE': 'django.db.backends.sqlite3',
+         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'url_shortener_apidb',
+         'USER': 'postgres',
+         'PASSWORD': 'qw12er34',
+         'HOST': 'localhost',
+         'PORT': '5432',
     }
 }
 
@@ -112,6 +118,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # config
-# HOST_URL='http://127.0.0.1:8000'
+HOST_URL='http://127.0.0.1:8000'
 
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
